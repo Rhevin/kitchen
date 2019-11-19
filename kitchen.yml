@@ -26,7 +26,11 @@ platforms:
 
 suites:
   - name: default
+    run_list:
+     - recipe[git_cookbook::server] 
     verifier:
       inspec_tests:
         - test/integration/default
     attributes:
+    excludes:
+            - centos-7
